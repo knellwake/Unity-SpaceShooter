@@ -12,6 +12,14 @@ public class BossBaseState : MonoBehaviour
     protected float maxDown;
     protected float maxUp;
 
+    protected BossController bossController;
+
+    private void Awake()
+    {
+        bossController = GetComponent<BossController>();
+        mainCam = Camera.main;
+    }
+
     protected virtual void Start()
     {
         maxLeft = mainCam.ViewportToWorldPoint(new Vector2(0.3f, 0)).x;

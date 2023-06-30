@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3770434498365754758
 MonoBehaviour:
@@ -48,3 +48,5 @@ MonoBehaviour:
   - {fileID: 535858456533646359, guid: e471a3901ac39944a8a1270ff696b994, type: 3}
   - {fileID: 5610079789825827700, guid: fb7914633c5b70944b2e2cd60249ed50, type: 3}
   enemySpawnTime: 2
+  bossPrefab: {fileID: 2505468742697721614, guid: 562df9bd16f3c0440b58c9b9fe9b338a, type: 3}
+  winCon: {fileID: 0}

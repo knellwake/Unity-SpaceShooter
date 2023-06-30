@@ -47,4 +47,5 @@ MonoBehaviour:
   possibleWinTime: 10
   spawner:
   - {fileID: 0}
-  - {fileID: 0}
+  hasBoss: 0
+  canSpawnBoss: 0

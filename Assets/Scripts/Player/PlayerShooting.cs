@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -23,10 +24,12 @@ public class PlayerShooting : MonoBehaviour
 
     [SerializeField] private Transform rightRotationCanon;
 
+    [SerializeField] private AudioSource source;
+
     private int upgradeLevel = 0;
 
     private float intervalReset; //重置
-
+    
     void Start()
     {
         intervalReset = shootingInterval;
@@ -58,6 +61,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void InstantiateShoot()
     {
+        source.Play();
         switch (upgradeLevel)
         {
             case 0:

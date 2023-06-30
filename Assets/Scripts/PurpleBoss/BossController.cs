@@ -13,9 +13,18 @@ public enum BossState
 
 public class BossController : MonoBehaviour
 {
+    [SerializeField] private BossEnter bossEnter;
+    [SerializeField] private BossFire bossFire;
+    [SerializeField] private BossSpecial bossSpecial;
+    [SerializeField] private BossDeath bossDeath;
+    
+    [SerializeField] private bool test;
+    [SerializeField] private BossState testState;
     private void Start()
     {
-        
+        ChangeState(BossState.enter);
+        if(test)
+            ChangeState(testState);
     }
 
     public void ChangeState(BossState state)
@@ -23,16 +32,19 @@ public class BossController : MonoBehaviour
         switch (state)
         {
             case BossState.enter:
-                Debug.Log("enter");
+                bossEnter.RunState();
                 break;
             case BossState.fire:
-                Debug.Log("fire");
+                bossFire.RunState();
                 break;
             case BossState.special:
-                Debug.Log("special");
+                bossSpecial.RunState();
                 break;
             case BossState.death:
-                Debug.Log("death");
+                bossEnter.StopState();
+                bossFire.StopState();
+                bossSpecial.StopState();
+                bossDeath.RunState();
                 break;
         }
     }
