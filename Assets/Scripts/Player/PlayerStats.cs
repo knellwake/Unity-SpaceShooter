@@ -11,6 +11,9 @@ public class PlayerStats : MonoBehaviour
     private Animator anim;
     [SerializeField] private Image healthFill;
     [SerializeField] private GameObject explosionPrefab;
+    [SerializeField] private Shield shield;
+
+    private PlayerShooting playerShooting;
     private bool canPlayAnim = true;
 
     private void Awake()
@@ -23,10 +26,14 @@ public class PlayerStats : MonoBehaviour
         health = maxHealth;
         healthFill.fillAmount = health / maxHealth;
         EndGameManager.endManager.gameOver = false;
+        playerShooting = GetComponent<PlayerShooting>();
     }
 
     public void PlayerTakeDamage(float damage)
     {
+        if(shield.protection)
+            return;
+        
         health -= damage;
         healthFill.fillAmount = health / maxHealth;
         
@@ -35,7 +42,7 @@ public class PlayerStats : MonoBehaviour
             anim.SetTrigger("Damage");
             StartCoroutine("AntiSpamAnimation");
         }
-        
+        playerShooting.DecreaseUpgrade();
         if (health <= 0)
         {
             EndGameManager.endManager.gameOver = true;
@@ -43,6 +50,14 @@ public class PlayerStats : MonoBehaviour
             Instantiate(explosionPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+    }
+
+    public void AddHealth(int healAmount)
+    {
+        health += healAmount;
+        if (health > maxHealth)
+            health = maxHealth;
+        healthFill.fillAmount = health / maxHealth;
     }
 
     private IEnumerator AntiSpamAnimation()

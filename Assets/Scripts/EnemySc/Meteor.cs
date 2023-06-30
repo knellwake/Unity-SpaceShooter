@@ -11,7 +11,8 @@ public class Meteor : Enemy
     [SerializeField] private float maxSpeed;
     protected float speed;
     [SerializeField] private float rotateSpeed;
-    
+    [SerializeField] private ScriptableObjExample powerUpSpawner;
+
     void Start()
     {
         speed = Random.Range(minSpeed, maxSpeed);
@@ -31,6 +32,8 @@ public class Meteor : Enemy
     {
         base.DeathSequence();
         Instantiate(explosionPrefab, transform.position, transform.rotation);
+        if (powerUpSpawner != null)
+            powerUpSpawner.SpawnPowerUp(transform.position);
         Destroy(gameObject);
     }
 

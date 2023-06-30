@@ -15,8 +15,8 @@ TagManager:
   - Enemy
   - PlayerProjectiles
   - EnemyProjectiles
-  - 
-  - 
+  - Collectibles
+  - Shield
   - 
   - 
   - 
