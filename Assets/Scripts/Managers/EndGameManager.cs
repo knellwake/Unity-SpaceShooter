@@ -8,12 +8,16 @@ public class EndGameManager : MonoBehaviour
 {
     public static EndGameManager endManager;
     public bool gameOver;
+    public bool possibileWin;
+
     private PanelController panelController;
     private TextMeshProUGUI scoreTextComponent;
+    private PlayerStats player;
+    private RewardedAd rewardedAd;
 
-    private int score;
+    public int score;
 
-    [HideInInspector] public string lvlUnlock = "LevelUnlock";//保存数据的键
+    [HideInInspector] public string lvlUnlock = "LevelUnlock"; //保存数据的键
 
     void Awake()
     {
@@ -48,18 +52,27 @@ public class EndGameManager : MonoBehaviour
 
     public void ResolveGame()
     {
-        if (gameOver == false)
+        if (possibileWin == true && gameOver == false)
         {
             WinGame();
         }
-        else
+        else if (possibileWin == false && gameOver == true)
         {
+            //We lost, but we can continue because we are not at the end of a level.
+            //我们输了，但我们可以继续，因为我们还没有到一个关卡的终点。
+            AdLoseGame();
+        }
+        else if (possibileWin == true && gameOver == true)
+        {
+            //我们在关卡结束时输了。玩家和boss都被摧毁了
+            //或者计时器过期了，但玩家被最后一颗流星/子弹摧毁了。
             LoseGame();
         }
     }
 
     public void WinGame()
     {
+        player.canTakeDmg = false;
         //激活面板
         //解锁下一关
         //得分
@@ -68,7 +81,7 @@ public class EndGameManager : MonoBehaviour
         int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextLevel > PlayerPrefs.GetInt(lvlUnlock, 0))
         {
-            PlayerPrefs.SetInt(lvlUnlock,nextLevel);
+            PlayerPrefs.SetInt(lvlUnlock, nextLevel);
         }
     }
 
@@ -76,6 +89,20 @@ public class EndGameManager : MonoBehaviour
     {
         ScoreSet();
         panelController.ActivateLose();
+    }
+
+    public void AdLoseGame()
+    {
+        ScoreSet();
+        if (rewardedAd.adNumber > 0)
+        {
+            rewardedAd.adNumber -= 1;
+            panelController.ActivateAdLose();
+        }
+        else
+        {
+            panelController.ActivateLose();
+        }
     }
 
     private void ScoreSet()
@@ -96,5 +123,15 @@ public class EndGameManager : MonoBehaviour
     public void RegisterScoreText(TextMeshProUGUI scoreTextComp)
     {
         scoreTextComponent = scoreTextComp;
+    }
+
+    public void RegisterPlayerStats(PlayerStats statsPlayer)
+    {
+        player = statsPlayer;
+    }
+
+    public void RegisterRewardAd(RewardedAd ad)
+    {
+        rewardedAd = ad;
     }
 }
