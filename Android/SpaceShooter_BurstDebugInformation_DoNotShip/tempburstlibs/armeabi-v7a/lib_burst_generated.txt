@@ -8,7 +8,7 @@ Library: D:\code\unity project\SpaceShooter\Temp\BurstOutput\tempburstlibs\armea
 --float-precision=Standard
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\code\unity project\SpaceShooter\Temp\Burst
---key-folder=D:/compiler/Unity Hub/unity datafile/untiy vision/2022.3.0f1c1/Editor/Data/PlaybackEngines/AndroidPlayer
+--key-folder=D:/compiler/Unity Hub/unity datafile/untiy vision/2022.3.1f1c1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=D:\code\unity project\SpaceShooter\Library\Burst
 --output=D:\code\unity project\SpaceShooter\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
