@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _androidAdUnitId: Interstitial_Android
   _iOsAdUnitId: Interstitial_iOS
+  bannerAd: {fileID: 382226801388850922, guid: c5d4b76013c598247bde5be47ff6ffa6, type: 3}
+  timeToSkip: 1

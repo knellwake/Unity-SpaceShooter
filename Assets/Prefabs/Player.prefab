@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d110e760eeac5904182964c715457ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserBullet: {fileID: 4972310583292622250, guid: b85fcc33667a26043b398118ba1798ae, type: 3}
+  laserBullet: {fileID: 3569187885082373820, guid: b85fcc33667a26043b398118ba1798ae, type: 3}
   shootingInterval: 0.3
   basicShootPoint: {fileID: 4477226106447387313}
   leftCanon: {fileID: 3150455031250322989}
@@ -403,6 +403,7 @@ MonoBehaviour:
   healthFill: {fileID: 0}
   explosionPrefab: {fileID: 8681621346893290627, guid: 36d34c8c91456dc4c899eec82efc2082, type: 3}
   shield: {fileID: 7794624575259438126}
+  canTakeDmg: 1
 --- !u!114 &6921617184241383849
 MonoBehaviour:
   m_ObjectHideFlags: 0

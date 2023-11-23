@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class BossStats : Enemy
 {
     [SerializeField] private BossController bossController;
-
+    
     public override void HurtSequence()
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsTag("Dmg"))

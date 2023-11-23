@@ -53,9 +53,10 @@ public class EnemySpawner : MonoBehaviour
     {
         if(winCon.canSpawnBoss == false)
             return;
+        
         if (bossPrefab != null)
         {
-            Vector3 spawnPos = mainCam.ViewportToWorldPoint(new Vector2(0.5f, 1.2f));
+            Vector2 spawnPos = mainCam.ViewportToWorldPoint(new Vector2(0.5f, 1.2f));
             Instantiate(bossPrefab, spawnPos, Quaternion.identity);
         }
     }

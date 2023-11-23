@@ -976,10 +976,6 @@ PrefabInstance:
       propertyPath: winCon
       value: 
       objectReference: {fileID: 1317503625}
-    - target: {fileID: 3770434498365754758, guid: 6bb04126a1678eb41ab17a350f526d25, type: 3}
-      propertyPath: bossPrefab
-      value: 
-      objectReference: {fileID: 2505468742697721614, guid: 562df9bd16f3c0440b58c9b9fe9b338a, type: 3}
     - target: {fileID: 5815961843726209560, guid: 6bb04126a1678eb41ab17a350f526d25, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1027,6 +1023,10 @@ PrefabInstance:
     - target: {fileID: 7515899225236855861, guid: 6bb04126a1678eb41ab17a350f526d25, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515899225236855861, guid: 6bb04126a1678eb41ab17a350f526d25, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1484,6 +1484,11 @@ SpriteRenderer:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7422667259351251116, guid: 08631793186eb1d40a1ac711bab17525, type: 3}
   m_PrefabInstance: {fileID: 2840133881937598628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1542890196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7515899225236855861, guid: 6bb04126a1678eb41ab17a350f526d25, type: 3}
+  m_PrefabInstance: {fileID: 1074526701}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1613029501
 GameObject:
@@ -2200,6 +2205,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2478112968192799400, guid: 32ec58c8018adf343a2fa49b7d43323d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6774267647363318611, guid: 32ec58c8018adf343a2fa49b7d43323d, type: 3}
       propertyPath: m_Name
       value: CanvasFader
@@ -2435,6 +2444,10 @@ PrefabInstance:
       propertyPath: shieldBase.Array.data[2]
       value: 
       objectReference: {fileID: 1224142755}
+    - target: {fileID: 7873635378238467870, guid: 844f509fc326679438768509bb30594e, type: 3}
+      propertyPath: laserBullet
+      value: 
+      objectReference: {fileID: 3569187885082373820, guid: b85fcc33667a26043b398118ba1798ae, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2679,6 +2692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeteorSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 332925627875743769, guid: 6970bddba5cc9334bb67872a69f02100, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 807373242540490687, guid: 6970bddba5cc9334bb67872a69f02100, type: 3}
       propertyPath: spawnTime
       value: 0.7
@@ -2847,11 +2864,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6236002884112834801, guid: 827bd9ed322458d49a91fa834be1a5e3, type: 3}
       propertyPath: hasBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236002884112834801, guid: 827bd9ed322458d49a91fa834be1a5e3, type: 3}
+      propertyPath: canSpawnBoss
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6236002884112834801, guid: 827bd9ed322458d49a91fa834be1a5e3, type: 3}
+      propertyPath: possibleWinTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236002884112834801, guid: 827bd9ed322458d49a91fa834be1a5e3, type: 3}
       propertyPath: spawner.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6236002884112834801, guid: 827bd9ed322458d49a91fa834be1a5e3, type: 3}
       propertyPath: spawner.Array.data[0]
@@ -2860,7 +2885,7 @@ PrefabInstance:
     - target: {fileID: 6236002884112834801, guid: 827bd9ed322458d49a91fa834be1a5e3, type: 3}
       propertyPath: spawner.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1542890196}
     - target: {fileID: 8246997970214266423, guid: 827bd9ed322458d49a91fa834be1a5e3, type: 3}
       propertyPath: m_Name
       value: WinCondition

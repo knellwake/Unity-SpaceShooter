@@ -47,5 +47,5 @@ MonoBehaviour:
   adNumber: 1
   _androidAdUnitId: Rewarded_Android
   _iOSAdUnitId: Rewarded_iOS
-  player: {fileID: 0}
-  bannerAd: {fileID: 0}
+  player: {fileID: 5227258075081767261, guid: 844f509fc326679438768509bb30594e, type: 3}
+  bannerAd: {fileID: 382226801388850922, guid: c5d4b76013c598247bde5be47ff6ffa6, type: 3}

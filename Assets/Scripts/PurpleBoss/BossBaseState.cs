@@ -16,8 +16,8 @@ public class BossBaseState : MonoBehaviour
 
     private void Awake()
     {
-        bossController = GetComponent<BossController>();
         mainCam = Camera.main;
+        bossController = GetComponent<BossController>();
     }
 
     protected virtual void Start()

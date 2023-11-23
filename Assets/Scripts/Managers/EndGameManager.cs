@@ -46,7 +46,7 @@ public class EndGameManager : MonoBehaviour
 
     private IEnumerator ResolveSequence()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2.5f);
         ResolveGame();
     }
 
